@@ -12,7 +12,15 @@ router.get('/clients/register', (req, res) => {
 })
 
 router.post('/clients/register', (req, res) => {
+    //    res.send(req.body.clients)
+    const clientes = req.body.clients
+    Clients.push(clientes).then(() => {
+        res.redirect('/clients')
+    })
+})
 
+router.get('/clients', (req, res) => {
+    res.send(Clients)
 })
 
 
