@@ -14,21 +14,15 @@
                         </select>
                     </div>
                     <div class="form-group col-8">
-                        <label for="num1" id="labelBranco">Adione o Numero de telefone</label>
-                        <input class="form-control col-12" type="number" id="num1">                        
-                    </div>
-                </div>
-                <div class="row col-12">
-                    <div class="form-group col-12">                       
                         <label for="">Selecione os numeros</label>
                         <select name="telefone" id="telefone" class="form-control">
                             <option value="">Selecione</option>
                             {{#each clients}}
-                            <option value="">{{index}} - {{numero}}</option>
+                            <option value="{{numero}}">{{index}} - {{numero}}</option>
                             {{/each}}
-                        </select>
+                        </select>                   
                     </div>
-                </div>
+                </div>                
                 <div class="row" id="Text">
                     <div class="form-group col-12">
                         <label for="" id="labelBranco">Mensagem a ser Enviada</label>

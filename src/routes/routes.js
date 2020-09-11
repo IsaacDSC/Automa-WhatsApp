@@ -23,7 +23,8 @@ router.post('/clients/register', (req, res) => {
         })
     }
 
-    console.log(Clients)
+    //console.log(Clients)
+    res.redirect('/')
 })
 
 router.get('/clients', (req, res) => {
