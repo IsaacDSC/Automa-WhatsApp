@@ -4,7 +4,7 @@ const router = express.Router()
 const Clients = []
 
 router.get('/', (req, res) => {
-    res.render('index/index')
+    res.render('index/index', { clients: Clients })
 })
 
 router.get('/clients/register', (req, res) => {
@@ -12,15 +12,22 @@ router.get('/clients/register', (req, res) => {
 })
 
 router.post('/clients/register', (req, res) => {
-    //    res.send(req.body.clients)
-    const clientes = req.body.clients
-    Clients.push(clientes).then(() => {
-        res.redirect('/clients')
-    })
+    var re = /\s*\r\n\s*/;
+    var numerosLists = req.body.clients.split(re);
+
+    for (let i = 0; i < numerosLists.length; i++) {
+        console.log('cadastrando: ' + numerosLists[i])
+        Clients.push({
+            index: i,
+            numero: numerosLists[i]
+        })
+    }
+
+    console.log(Clients)
 })
 
 router.get('/clients', (req, res) => {
-    res.send(Clients)
+
 })
 
 
