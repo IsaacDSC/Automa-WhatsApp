@@ -1,0 +1,34 @@
+{
+    "name": "automa-whatsapp",
+    "version": "1.0.0",
+    "description": "",
+    "main": "./src/server.js",
+    "scripts": {
+        "start": "nodemon",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/IsaacDSC/Automa-WhatsApp.git"
+    },
+    "keywords": [
+        "wpp",
+        "zap",
+        "whatsapp",
+        "messages",
+        "mensagens"
+    ],
+    "author": "IsaacDSC",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/IsaacDSC/Automa-WhatsApp/issues"
+    },
+    "homepage": "https://github.com/IsaacDSC/Automa-WhatsApp#readme",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "connect-flash": "^0.1.1",
+        "express": "^4.17.1",
+        "express-handlebars": "^5.1.0",
+        "express-session": "^1.17.1"
+    }
+}

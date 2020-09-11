@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>whatsapp</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body onload="carregou()">
+    {{{body}}}
+
+    <script>
+        function carregou(){
+            var DATE = new Date
+            var Hr = DATE.getHours()  
+            var Text = document.querySelector('#Text')          
+            if(Hr >=7 && Hr <= 12){
+                var Dia = 'Bom Dia'
+                alert(Dia)            
+                
+            }
+            if(Hr >= 13 && Hr < 18){
+                var Tarde = 'Boa Tarde'
+            alert(Tarde)        
+            }
+            if(Hr >=18 && Hr <7){
+                var Noite = 'Boa Noite'            
+                alert(Noite)
+            }
+        }
+        function part_one() {
+            var num1 = document.querySelector('#num1').value
+            var DDD = document.querySelector('#DDD').value
+            if(DDD == 'null'){
+                alert('Selecione o DDD')
+            }
+            if(num1 == undefined || num1 == null || num1 == ''){
+                alert('Adione o Numero telefonico sem o DDD')
+            }
+            if(DDD != 'null' && num1 != ''){
+                window.open(`https://web.whatsapp.com/send?phone=+55${DDD}${num1}`, '_blank')                
+            }
+            
+        }
+        const textInput = document.getElementById('text');
+        const copyButton = document.getElementById('copy');
+
+        copyButton.addEventListener('click', () => {
+            textInput.select();
+            document.execCommand('copy');
+        });
+
+    </script>
+</body>
+
+</html>
