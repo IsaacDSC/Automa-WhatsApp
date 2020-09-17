@@ -12,15 +12,15 @@ router.get('/clients/register', (req, res) => {
 })
 
 router.post('/clients/register', (req, res) => {
-    console.log(req.body.cursos)
+    const Cursos = req.body.cursos
     var re = /\s*\r\n\s*/;
     var numerosLists = req.body.clients.split(re);
 
     for (let i = 0; i < numerosLists.length; i++) {
         console.log('cadastrando: ' + numerosLists[i])
         Clients.push({
-            index: i,
-            cursos: req.body.cursos,
+            index: i,     
+            cursos: Cursos,       
             numero: numerosLists[i]
         })
     }
@@ -29,7 +29,7 @@ router.post('/clients/register', (req, res) => {
     res.redirect('/')
 })
 
-router.get('/clients', (req, res) => {
 
-})
 
+
+module.exports = router
