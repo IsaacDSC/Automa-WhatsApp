@@ -12,6 +12,7 @@ router.get('/clients/register', (req, res) => {
 })
 
 router.post('/clients/register', (req, res) => {
+    console.log(req.body.cursos)
     var re = /\s*\r\n\s*/;
     var numerosLists = req.body.clients.split(re);
 
@@ -19,6 +20,7 @@ router.post('/clients/register', (req, res) => {
         console.log('cadastrando: ' + numerosLists[i])
         Clients.push({
             index: i,
+            cursos: req.body.cursos,
             numero: numerosLists[i]
         })
     }
@@ -31,5 +33,3 @@ router.get('/clients', (req, res) => {
 
 })
 
-
-module.exports = router
