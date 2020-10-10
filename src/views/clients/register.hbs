@@ -3,16 +3,28 @@
         <div class="card-body">
             <form action="/clients/register" method="post">
             <div class="row">
-            <label for="">Adione o nome do curso</label>
+            <label for="">Adione uma Descrição</label>
                 <div class="form-group col-12">
-                <input type="text" class="form-control col-12" name="cursos" placeholder="Escreva o nome do Curso">
+                <input type="text" class="form-control col-12" name="cursos" placeholder="Escreva uma descrição">
                 </div>
             </div>
                 <div class="row" id="Text">
                     <div class="form-group col-12">
-                        <label for="">Cadastrar Usuarios</label>
+                        <label for="">Cadastrar Usuarios, Coloque os numeros no campo abaixo.</label>
                         <textarea name="clients" id="clients" cols="30" rows="10" class="form-control"></textarea>
 
+                    </div>
+                </div>
+                <div class="row" id="Text">
+                    <div class="form-group col-12">
+                        <label for="">subir Imagens para Envio</label>
+                        <input type="file" class="form-control" name="img">
+                    </div>
+                </div>
+                <div class="row" id="Text">
+                    <div class="form-group col-12">
+                        <label for="">Cadastrar mensagem a ser enviada</label>
+                        <textarea name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
                     </div>
                 </div>
                 <div class="row">

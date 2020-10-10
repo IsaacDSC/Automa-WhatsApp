@@ -3,8 +3,14 @@ const hbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const app = express()
 const path = require('path')
+const boot = require('./config/boot')
+boot.client()
+
+
 
 const routes = require('./routes/routes')
+
+
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -18,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(routes)
 
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 
 app.listen(port, () => {
     console.log('Server On')

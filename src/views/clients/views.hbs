@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h3>Pagina Para vizualizar Clientes e Mensagens cadastradas</h3>
+            <hr>
+            <div class="row">
+                {{#each element}}
+                <div class="col-6">
+                    <h5><strong> Id: </strong>{{index}}</h5>
+                    <h5><strong>Descrição: </strong> {{desc}}</h5>
+                    <h5><strong>Menssagem: </strong> {{message}}</h5>
+                    <h5><strong>Numero: </strong>{{numero}}</h5>
+                </div>
+                {{/each}}
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+
+                </div>
+                <div class="col">
+                    <a href="/enviar" class="btn btn-dark col-12">Enviar</a>
+                </div>
+                <div class="col-4">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
