@@ -6,18 +6,18 @@ const path = require('path')
 const fs = require('fs')
 const folder = path.resolve(__dirname + '', '../', 'public', 'images')
 
-/*function filesIMG() {
-    fs.readdir(folder, (err, paths) => {
-        //def nomes do arquivos
-        console.log(paths)
-    })
-}*/
-
-
 router.get('/', (req, res) => {
     res.render('index/index', { clients: Clients })
 })
 
+router.post('/resultados', async (req, res) => {
+    const corpo = await req.body
+    fs.writeFile('dados.json', JSON.stringify(corpo), function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+      });
+    res.send(corpo)
+})
 router.get('/clients/register', (req, res) => {
     res.render('clients/register')
 })
@@ -48,12 +48,13 @@ router.get('/views', (req, res) => {
     res.render('clients/views', { element: Clients })
 })
 
-router.get('/enviar', async(req, res) => {
+router.get('/enviar', async (req, res) => {
+     
     let ctr = 0;
     await Clients.forEach((element, index, array) => {
         ctr++
-        setTimeout(function() {
-            boot.sendText('5524' + element.numero + '@c.us', element.message).then((result) => {
+        setTimeout(function () {
+            boot.sendText('55' + element.numero + '@c.us', element.message).then((result) => {
                 console.log('Result: ', result);
             }).catch((erro) => {
                 console.error('Error when sending: ', erro); //return object error
@@ -67,15 +68,15 @@ router.get('/enviar', async(req, res) => {
     })
 })
 
-router.get('/image', async(req, res) => {
+router.get('/image', async (req, res) => {
     let ctr = 0;
 
     fs.readdir(folder, (err, paths) => {
         Clients.forEach((element, index, array) => {
-            setTimeout(function() {
+            setTimeout(function () {
                 paths.forEach((e, index, array) => {
                     ctr++
-                    boot.sendImage('5524' + element.numero + '@c.us', folder + '/' + e, 'nome').then((result) => {
+                    boot.sendImage('55' + element.numero + '@c.us', folder + '/' + e, 'nome').then((result) => {
                         console.log('Result: ', result); //return object success
                     }).catch((erro) => {
                         console.error('Error when sending: ', erro); //return object error
