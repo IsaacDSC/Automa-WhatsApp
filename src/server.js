@@ -4,12 +4,18 @@ const bodyParser = require('body-parser')
 const app = express()
 const path = require('path')
 const boot = require('./config/boot')
+const cors = require('cors')
+
 boot.client()
 
-
+app.use(cors())
 
 const routes = require('./routes/routes')
 
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*"); //The ionic server
+    next();
+});
 
 
 app.use(bodyParser.urlencoded({ extended: true }))
