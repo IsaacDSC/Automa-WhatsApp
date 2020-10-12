@@ -86,7 +86,7 @@ router.get('/image', async (req, res) => {
                         res.redirect('/')
                     }
                 })
-            }, 1000 * index)
+            }, 2000 * index)
         })
     })
 })

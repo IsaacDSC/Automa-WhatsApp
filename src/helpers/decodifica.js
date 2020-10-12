@@ -1,3 +1,5 @@
-const obj = require('../../dados.json')
+const result = require('../../dados.json')
+var saida = [];
 
-obj.forEach(e=>console.log(e.telefone+' '+ e.nomeLanchonete) )
+result.filter(e=>console.log( e.telefone + ' ' + e.nomeLanchonete))
+
