@@ -53,9 +53,11 @@ router.get('/enviar', async (req, res) => {
     let ctr = 0;
     await Clients.forEach((element, index, array) => {
         ctr++
+        
         setTimeout(function () {
             boot.sendText('55' + element.numero + '@c.us', element.message).then((result) => {
                 console.log('Result: ', result);
+                
             }).catch((erro) => {
                 console.error('Error when sending: ', erro); //return object error
             })
@@ -69,20 +71,20 @@ router.get('/enviar', async (req, res) => {
 })
 
 router.get('/image', async (req, res) => {
-    let ctr = 0;
+    let contador = 0;
 
-    fs.readdir(folder, (err, paths) => {
+fs.readdir(folder, (err, paths) => {
         Clients.forEach((element, index, array) => {
             setTimeout(function () {
                 paths.forEach((e, index, array) => {
-                    ctr++
+                    contador++
                     boot.sendImage('55' + element.numero + '@c.us', folder + '/' + e, 'nome').then((result) => {
                         console.log('Result: ', result); //return object success
                     }).catch((erro) => {
                         console.error('Error when sending: ', erro); //return object error
                     })
 
-                    if (ctr === array.length) {
+                    if (contador === array.length) {
                         res.redirect('/')
                     }
                 })

@@ -1,5 +1,5 @@
 let resultado = []
-
+let tele 
 try {
     function captura(){
         let elemento = document.querySelectorAll('.dbg0pd')
@@ -30,7 +30,7 @@ try {
             nomeLanchonete = document.querySelector('.qrShPb').getElementsByTagName('span')[0].innerText
             endereco = document.querySelector('.LrzXr').innerText
             telefone = document.querySelectorAll('[jscontroller="cSkPLb"]')[1].getElementsByTagName('span')[0].innerText
-    
+
             if(!endereco){
                 return
             }
