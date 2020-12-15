@@ -6,7 +6,11 @@ const path = require('path')
 const fs = require('fs')
 const folder = path.resolve(__dirname + '', '../', 'public', 'images')
 
-router.get('/', (req, res) => {
+router.get('/', (req, res)=>{
+    res.render('home/home')
+})
+
+router.get('/index', (req, res) => {
     res.render('index/index', { clients: Clients })
 })
 
@@ -49,15 +53,15 @@ router.get('/views', (req, res) => {
 })
 
 router.get('/enviar', async (req, res) => {
-     
+
     let ctr = 0;
     await Clients.forEach((element, index, array) => {
         ctr++
-        
+
         setTimeout(function () {
             boot.sendText('55' + element.numero + '@c.us', element.message).then((result) => {
                 console.log('Result: ', result);
-                
+
             }).catch((erro) => {
                 console.error('Error when sending: ', erro); //return object error
             })
