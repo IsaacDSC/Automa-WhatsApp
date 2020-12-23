@@ -33,6 +33,6 @@
         "express-session": "^1.17.1",
         "multer": "^1.4.2",
         "nodemon": "^2.0.6",
-        "venom-bot": "^2.1.2"
+        "venom-bot": "^2.2.2"
     }
 }
