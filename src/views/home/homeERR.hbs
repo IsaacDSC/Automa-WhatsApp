@@ -1,0 +1,32 @@
+<div class="container mt-5">
+        <div class="card-body">
+            <div class="card" style="width: 18rem;">
+                <img src="" id="imgQRCODE" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><strong> Login para Acesso</strong></h5>
+                    <p class="card-text">Login necessário para envio automático de menssagens, caso vá usar o envio manual não é
+                        necessário o que leia este qrCode, pois será necessário logar com WhatsApp Web.</p>
+                        <form action="" method="post">
+                            <button class="btn btn-danger">Close Session</button>
+                            <a class="btn btn-success" onclick="refresh()">Refresh</a>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function refresh(){
+        arlert('ok')
+    const Qrcode = document.querySelector('#imgQRCODE').attr('/images/qrCode.png')
+    //Qrcode.src('/images/qrCode.png')
+        //alert('refresh')
+        //Qrcode.src('../../public/images/qrCode.png')
+        //Qrcode.setAttribute('/images/qrCode.png', this.src)
+        //location.reload()
+    }
+
+    setInterval(()=>{
+
+    }, 2000)
+</script>

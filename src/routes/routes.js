@@ -6,6 +6,11 @@ const path = require('path')
 const fs = require('fs')
 const folder = path.resolve(__dirname + '', '../', 'public', 'propaganda')
 
+
+const sendIMG = require('../helpers/sendIMG')
+const sendMessage = require('../helpers/sendMessage')
+
+
 router.get('/', (req, res) => {
     res.render('home/home')
 })
@@ -22,6 +27,7 @@ router.post('/resultados', async(req, res) => {
     });
     res.send(corpo)
 })
+
 router.get('/clients/register', (req, res) => {
     res.render('clients/register')
 })
@@ -99,70 +105,14 @@ router.get('/images', async(req, res) => {
 })
 
 
-async function sendMSG(res, Clients) {
-    let ctr = 0;
-    await Clients.forEach((element, index, array) => {
-        ctr++
-        setTimeout(function() {
-            boot.sendText('55' + element.numero + '@c.us', element.message).then((result) => {
-                console.log('Sending message: ', result);
-            }).catch((erro) => {
-                console.error('Error when sending menssage: ', erro); //return object error
-            })
-        }, 1000 * index)
-
-        if (ctr === array.length) {
-            res.redirect('/')
-        }
-
-    })
-}
-
-router.get('/send', (req, res) => {
-    let ctr = 0
-    Clients.forEach((element, index, array) => {
-        ctr++
-        setTimeout(function() {
-            boot.sendImage('5524' + element.numero + '@c.us', folder + '/' + '23.12.2020.jpeg', element.message).then((result) => {
-                console.log('sending img: ' + result)
-                console.log('caminho absoluto Imagem: ' + folder + '/' + '23.12.2020.jpeg', )
-                console.log('message: ' + element.message)
-                console.log('para: ' + element.numero)
-            }).catch((err) => {
-                console.log('error sending img clients: ' + err)
-            })
-        }, 2000 * index)
 
 
-        if (ctr === array.length) {
-            //sendMSG(res)
-            res.redirect('/')
-        }
-    })
+router.get('/sendIMG', (req, res) => {
+    sendIMG.send(req, res, Clients)
+})
 
-
-    /*     function selectFolders() {
-
-        }
-        selectFolders() */
-
-    /*  Clients.forEach((element, index, array) => {
-                 setTimeout(function() {
-                     paths.forEach((e, index, array) => {
-                         contador++
-                         boot.sendImage('5524' + element.numero + '@c.us', folder + '/' + e, '23.12.2020.jpeg').then((result) => {
-                             console.log('Result: ', result); //return object success
-                         }).catch((erro) => {
-                             console.error('Error when sending: ', erro); //return object error
-                         })
-
-                         if (contador === array.length) {
-                             res.redirect('/')
-                         }
-                     })
-                 }, 2000 * index)
-             }) 
-    })*/
+router.get('/sendMessage', (req, res)=>{
+    sendMessage.send(req, res, Clients)
 })
 
 module.exports = router

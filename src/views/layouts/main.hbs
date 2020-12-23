@@ -7,35 +7,39 @@
     <title>whatsapp</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    {{>pluginsCss}}
 </head>
 
 <body onload="carregou()">
-    <img src="/img/fundo.jpg" alt="imagem de fundo" id="imgFundo" class="img-fluid">
     {{>_nav}}
+    {{>_sideBar}}
     {{{body}}}
     {{>_footer}}
+
+
+    {{>pluginsJs}}
 
     {{!-- <script src="/js/mandarsms.js"></script> --}}
     {{!-- <script src="/js/btnCopiar.js"></script> --}}
     {{!-- <script>
-/*        function carregou(){
-            var DATE = new Date
-            var Hr = DATE.getHours()
-            var Text = document.querySelector('#Text')
-            if(Hr >=7 && Hr <= 12){
-                var Dia = 'Bom Dia'
-                alert(Dia)
+        /*        function carregou(){
+                    var DATE = new Date
+                    var Hr = DATE.getHours()
+                    var Text = document.querySelector('#Text')
+                    if(Hr >=7 && Hr <= 12){
+                        var Dia = 'Bom Dia'
+                        alert(Dia)
 
-            }
-            if(Hr >= 13 && Hr < 18){
-                var Tarde = 'Boa Tarde'
-            alert(Tarde)
-            }
-            if(Hr >=18 && Hr <7){
-                var Noite = 'Boa Noite'
-                alert(Noite)
-            }
-        }*/
+                    }
+                    if(Hr >= 13 && Hr < 18){
+                        var Tarde = 'Boa Tarde'
+                    alert(Tarde)
+                    }
+                    if(Hr >=18 && Hr <7){
+                        var Noite = 'Boa Noite'
+                        alert(Noite)
+                    }
+                }*/
 
 
 
