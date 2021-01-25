@@ -87,7 +87,12 @@ async function start(client) {
 }
 
 
-
+async function createingGroup(name, numeros) {
+    await client.createGroup('Group name', [       
+        '111111111111@c.us',
+        '222222222222@c.us',
+    ]);
+}
 
 exports.sendImage = sendImage
 exports.sendText = sendText

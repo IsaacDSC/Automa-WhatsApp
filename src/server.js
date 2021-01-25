@@ -6,7 +6,7 @@ const path = require('path')
 const boot = require('./config/boot')
 const cors = require('cors')
 
-//boot.client()
+boot.client()
 
 app.use(cors())
 

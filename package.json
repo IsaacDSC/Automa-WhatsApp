@@ -33,6 +33,7 @@
         "express-session": "^1.17.1",
         "multer": "^1.4.2",
         "nodemon": "^2.0.6",
+        "puppeteer": "^5.5.0",
         "venom-bot": "^2.2.2"
     },
     "devDependencies": {
